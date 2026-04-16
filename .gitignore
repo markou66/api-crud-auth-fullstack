@@ -8,10 +8,10 @@ build/
 .env
 .env.local
 *.local
-# Ignora binários e arquivos gerados do Prisma
-project-api/generated/prisma
 
-# (Se a pasta 'generated' estiver na raiz do back, o caminho acima funciona)
+# --- Prisma ---
+generated/prisma
+prisma/generated
 
 # --- Logs ---
 logs
