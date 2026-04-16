@@ -1,0 +1,34 @@
+# --- Dependências e Build ---
+node_modules/
+dist/
+dist-ssr/
+build/
+
+# --- Segurança e Ambiente ---
+.env
+.env.local
+*.local
+# Ignora binários e arquivos gerados do Prisma
+project-api/generated/prisma
+
+# (Se a pasta 'generated' estiver na raiz do back, o caminho acima funciona)
+
+# --- Logs ---
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- Editores e Sistema ---
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
