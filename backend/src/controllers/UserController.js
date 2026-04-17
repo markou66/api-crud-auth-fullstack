@@ -9,26 +9,46 @@ const SALT_ROUNDS = 10
 class UserController {
     // POST /cadastro
     async cadastro(req, res) {
-        const { email, name, password, respostaSeguranca } = req.body
-        if (!email || !name || !password || !respostaSeguranca) {
-            return res.status(400).json({ message: 'Preencha todos os campos.' })
-        }
         try {
+            if (!req.body || Object.keys(req.body).length === 0) {
+                return res.status(400).json({ message: 'Corpo da requisição não fornecido.' })
+            }
+
+            const { email, name, password, respostaSeguranca } = req.body
+
+            
+            if (!email || !name || !password || !respostaSeguranca) {
+                return res.status(400).json({ message: 'Preencha todos os campos obrigatórios.' })
+            }
+
             const hashPassword = await bcrypt.hash(password, SALT_ROUNDS)
+            
             const user = await prisma.user.create({
                 data: { email, name, password: hashPassword, respostaSeguranca }
             })
-            return res.status(201).json(user)
+
+            
+            const { password: _, ...userWithoutPassword } = user
+            return res.status(201).json(userWithoutPassword)
+
         } catch (err) {
+            console.error('[UserController.cadastro]', err)
+            
+            if (err.code === 'P2002') {
+                return res.status(400).json({ message: 'Este e-mail já está cadastrado.' })
+            }
             return res.status(500).json({ message: 'Erro ao cadastrar usuário.' })
         }
     }
 
     // POST /login
     async login(req, res) {
-        const { email, password } = req.body
         try {
+            if (!req.body) return res.status(400).json({ message: 'Dados não fornecidos.' })
+            
+            const { email, password } = req.body
             const user = await prisma.user.findUnique({ where: { email } })
+            
             if (!user) return res.status(404).json({ message: 'Usuário não encontrado.' })
 
             const senhaCorreta = await bcrypt.compare(password, user.password)
@@ -43,8 +63,13 @@ class UserController {
 
     // PUT /recuperar-senha
     async recuperarSenha(req, res) {
-        const { email, password, respostaSeguranca } = req.body
         try {
+            const { email, password, respostaSeguranca } = req.body
+            
+            if (!email || !password || !respostaSeguranca) {
+                return res.status(400).json({ message: 'Preencha todos os campos para recuperar a senha.' })
+            }
+
             const user = await prisma.user.findUnique({ where: { email } })
             if (!user) return res.status(404).json({ message: 'Usuário não encontrado.' })
 
@@ -69,7 +94,7 @@ class UserController {
             const users = await prisma.user.findMany({
                 select: { id: true, name: true, email: true } 
             })
-            return res.status(200).json({ message: 'Usuarios Listados com sucesso', users })
+            return res.status(200).json({ message: 'Usuários listados com sucesso', users })
         } catch (err) {
             return res.status(500).json({ message: 'Erro ao listar usuários.' })
         }
