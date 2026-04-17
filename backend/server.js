@@ -1,8 +1,8 @@
 import express from 'express'
 import cors from 'cors'
-import publicRoutes from './routes/public.js'
-import privateRoutes from './routes/private.js'
-import auth from './middlewares/auth.js'
+import publicRoutes from './src/routes/public.js'
+import privateRoutes from './src/routes/private.js'
+import auth from './src/middlewares/auth.js'
 
 const app = express()
 
@@ -17,4 +17,4 @@ const PORT = process.env.PORT || 2000
 
 app.listen(PORT, () => {
   console.log(`[servidor] Rodando com sucesso na porta ${PORT}`)
-})
+}) 
