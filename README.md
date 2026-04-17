@@ -2,8 +2,8 @@
 
 Projeto full stack desenvolvido com foco em aprendizado de APIs REST, autenticação e integração entre backend e frontend.
 
-🔗 **Frontend:** https://api-crud-auth-fullstack-757s.vercel.app  
-🔗 **Backend API:** https://api-crud-auth-fullstack.onrender.com/api  
+🔗 Frontend: https://api-crud-auth-fullstack-757s.vercel.app  
+🔗 Backend API: https://api-crud-auth-fullstack.onrender.com/api  
 
 ---
 
@@ -23,7 +23,6 @@ Este projeto consiste em uma aplicação completa com:
 ## 🚀 Funcionalidades
 
 ### Backend
-
 - Cadastro de usuário  
 - Login com geração de token JWT  
 - Middleware de autenticação  
@@ -32,7 +31,6 @@ Este projeto consiste em uma aplicação completa com:
 - Exclusão de usuários  
 
 ### Frontend
-
 - Tela de cadastro  
 - Tela de login  
 - Tela de recuperação de senha  
@@ -63,11 +61,16 @@ Este projeto consiste em uma aplicação completa com:
 
 ---
 
+## 📥 Como clonar o projeto
+
+git clone https://github.com/markou66/api-crud-auth-fullstack.git  
+cd api-crud-auth-fullstack  
+
+---
+
 ## ⚙️ Como rodar o projeto localmente
 
-Siga os passos abaixo para configurar o ambiente de desenvolvimento em sua máquina.
-
-### 1. Backend
+### Backend
 
 cd backend  
 npm install  
@@ -77,7 +80,7 @@ Crie um arquivo `.env` na pasta backend:
 DATABASE_URL="SUA_STRING_DO_MONGODB"  
 JWT_SECRET="SUA_CHAVE_SECRETA"  
 
-Sincronização do banco (Prisma):
+Sincronização do banco:
 
 npx prisma db push  
 npx prisma generate  
@@ -91,13 +94,13 @@ http://localhost:2000
 
 ---
 
-### 2. Frontend
+### Frontend
 
-cd frontend  
+cd users  
 npm install  
 
 Configuração da API:  
-No arquivo `src/services/api.js`, ajuste a baseURL para ambiente local:
+No arquivo `src/services/api.js`:
 
 baseURL: "http://localhost:2000"  
 
@@ -124,8 +127,8 @@ http://localhost:5173
 
 ### Privadas (necessário token)
 
-| Método | Rota                 | Descrição           |
-|--------|---------------------|------------------|
+| Método | Rota                  | Descrição           |
+|--------|----------------------|------------------|
 | GET    | /api/listar-usuarios | Listar usuários   |
 | DELETE | /api/user/:id        | Deletar usuário   |
 
