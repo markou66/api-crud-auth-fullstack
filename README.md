@@ -2,8 +2,8 @@
 
 Projeto full stack desenvolvido com foco em aprendizado de APIs REST, autenticação e integração entre backend e frontend.
 
-🔗 Frontend: https://api-crud-auth-fullstack-757s.vercel.app  
-🔗 Backend API: https://api-crud-auth-fullstack.onrender.com/api  
+🔗 **Frontend:** https://api-crud-auth-fullstack-757s.vercel.app  
+🔗 **Backend API:** https://api-crud-auth-fullstack.onrender.com/api  
 
 ---
 
@@ -44,27 +44,31 @@ Este projeto consiste em uma aplicação completa com:
 ## 🛠 Tecnologias utilizadas
 
 ### Backend
-- Node.js  
-- Express  
-- Prisma ORM  
-- MongoDB  
-- JWT (Autenticação)  
-- Bcrypt (Hash de senha)  
-- CORS  
+- Node.js / Express  
+- Prisma ORM / MongoDB  
+- JWT & Bcrypt  
 
 ### Frontend
-- React  
-- Vite  
+- React (Vite)  
 - React Router DOM  
 - Axios  
 - Tailwind CSS  
 
 ---
 
-## 📥 Como clonar o projeto
-
-git clone https://github.com/markou66/api-crud-auth-fullstack.git  
-cd api-crud-auth-fullstack  
+## 📁 Estrutura de Pastas (Frontend)
+ ```
+src/
+ ├── components/     # Componentes reutilizáveis (Input.jsx)
+ ├── pages/          # Páginas (Login, Cadastro, Lista, Recuperar)
+ ├── services/       # Configuração da API (api.js)
+ └── styles/         # Estilos globais (styles.css) 
+```
+ ---
+ ## 📥 Como clonar o projeto
+ 
+git clone [https://github.com/markou66/api-crud-auth-fullstack.git](https://github.com/markou66/api-crud-auth-fullstack.git)  
+cd api-crud-auth-fullstack
 
 ---
 
