@@ -101,7 +101,7 @@ http://localhost:2000
 
 ### Frontend
 
-cd users  
+cd frontend 
 npm install  
 
 Configuração da API:  
