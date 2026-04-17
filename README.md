@@ -102,7 +102,7 @@ npm install
 Configuração da API:  
 No arquivo `src/services/api.js`:
 
-baseURL: "http://localhost:2000"  
+baseURL: "http://localhost:2000/api"  
 
 Iniciar o frontend:
 
