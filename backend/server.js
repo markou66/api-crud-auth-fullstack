@@ -13,7 +13,7 @@ app.use(cors())
 app.use('/api', publicRoutes)
 app.use('/api', auth, privateRoutes)
 
-const PORT = 2000
+const PORT = process.env.PORT || 2000
 
 app.listen(PORT, () => {
   console.log(`[servidor] Rodando com sucesso na porta ${PORT}`)
