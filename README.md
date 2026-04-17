@@ -2,6 +2,9 @@
 
 Projeto full stack desenvolvido com foco em aprendizado de APIs REST, autenticação e integração entre backend e frontend.
 
+🔗 Frontend: https://api-crud-auth-fullstack-757s.vercel.app  
+🔗 Backend API: https://api-crud-auth-fullstack.onrender.com/api
+
 ---
 
 ## 📌 Sobre o projeto
