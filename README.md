@@ -86,8 +86,8 @@ JWT_SECRET="SUA_CHAVE_SECRETA"
 
 Sincronização do banco:
 
-npx prisma db push  
-npx prisma generate  
+npx prisma db push --schema=./src/prisma/schema.prisma
+npx prisma generate --schema=./src/prisma/schema.prisma
 
 Iniciar o servidor:
 
