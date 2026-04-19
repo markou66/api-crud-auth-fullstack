@@ -34,7 +34,7 @@ function Cadastro() {
       
         <Input ref={nameRef} placeholder='Nome' type='text' />
         <Input ref={emailRef} placeholder='Email' type='email' />
-        <Input ref={respostaRef} placeholder='Pergunta de Segurança' type='text' />
+        <Input ref={respostaRef} placeholder='Qual nome do seu primeiro pet?' type='text' />
         <Input ref={passwordRef} placeholder='Senha' type='password' />
 
         <button
